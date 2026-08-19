@@ -10,7 +10,7 @@ const money = (value: number) => 'RM ' + value.toLocaleString('en-MY', { minimum
 
 function Progress({ value, color }: { value: number; color: string }) {
   const c = useColors();
-  return <View style={[styles.track, { backgroundColor: c.muted }]}><View style={[styles.fill, { width: Math.min(100, value) + '%', backgroundColor: color }]} /></View>;
+  return <View style={[styles.track, { backgroundColor: c.muted }]}><View style={[styles.fill, { width: (Math.min(100, value) + '%') as `${number}%`, backgroundColor: color }]} /></View>;
 }
 function IconButton({ name, onPress }: { name: keyof typeof Ionicons.glyphMap; onPress?: () => void }) {
   const c = useColors();
