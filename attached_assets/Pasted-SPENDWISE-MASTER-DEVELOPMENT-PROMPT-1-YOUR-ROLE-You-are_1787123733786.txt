@@ -1,0 +1,1428 @@
+SPENDWISE — MASTER DEVELOPMENT PROMPT
+
+1. YOUR ROLE
+
+You are a senior full-stack web developer and software architect.
+
+Your task is to build a complete, functional personal finance web application called SpendWise.
+
+The application must be designed specifically for Google Apps Script and must use:
+
+* Google Apps Script as the backend
+* HTML, CSS and JavaScript for the frontend
+* Google Sheets as the database
+* Google Drive for receipt/file storage
+
+This is a real portfolio project, not a simple demonstration.
+
+Do not create a fake interface that only looks functional.
+
+Features such as login, saving transactions, editing transactions, budgets, accounts and reports must actually work.
+
+⸻
+
+2. IMPORTANT DEVELOPMENT RULES
+
+Follow these rules throughout the entire project.
+
+Rule 1 — Build a real application
+
+Do not create buttons that do nothing.
+
+Every visible button must either:
+
+* perform its intended action,
+* open the correct page,
+* open a dialog,
+* save information,
+* update information,
+* delete information,
+* or clearly display that the feature is not available yet.
+
+Do not leave fake functionality in the finished Version 1.
+
+Rule 2 — Real data storage
+
+All user financial information must be saved to Google Sheets.
+
+Do not store important financial information only in:
+
+* JavaScript variables
+* browser localStorage
+* temporary arrays
+* session-only variables
+
+LocalStorage may only be used for non-critical interface preferences such as theme selection.
+
+Rule 3 — User privacy
+
+Every user’s financial data must be associated with their unique user ID.
+
+Users must only be able to access their own:
+
+* accounts
+* transactions
+* budgets
+* savings goals
+* receipts
+* notifications
+* settings
+
+Never return another user’s financial data.
+
+Rule 4 — Do not use fake data in production
+
+You may use sample data during development.
+
+However, the finished application must use the real Google Sheets database.
+
+Clearly separate demo/sample data from real user data.
+
+Rule 5 — Mobile first
+
+The application must work properly on:
+
+* iPhone-sized screens
+* Android-sized screens
+* tablets
+* laptops
+* desktop computers
+
+Do not simply shrink the desktop layout.
+
+Create a proper responsive layout.
+
+Rule 6 — Do not redesign unnecessarily
+
+Follow the design specification below.
+
+Do not replace the requested design with a generic AI-generated dashboard.
+
+The interface should feel like a carefully designed financial application.
+
+Rule 7 — Keep code organized
+
+Do not place the entire application inside one enormous file.
+
+Separate backend logic and frontend logic into logical files.
+
+Rule 8 — Explain important setup steps
+
+After generating the code, clearly explain:
+
+1. Which files must be created.
+2. Where each code block belongs.
+3. Which Google Sheet must be created.
+4. Which Google Drive folder must be created.
+5. Which Script Properties must be configured.
+6. How to deploy the application.
+7. How to test the application.
+
+Use simple language.
+
+⸻
+
+3. PROJECT PURPOSE
+
+SpendWise is a personal finance management application.
+
+The main purpose is to help users:
+
+* track income
+* track expenses
+* manage multiple money accounts
+* create budgets
+* track savings goals
+* understand spending habits
+* view useful financial reports
+* store receipts
+* receive financial reminders
+
+The application should feel like a modern banking/finance application rather than a generic spreadsheet.
+
+⸻
+
+4. VERSION 1 SCOPE
+
+Build these features in Version 1.
+
+Authentication
+
+* Register
+* Login
+* Logout
+* Email/password authentication
+* Google Sign-In if technically feasible within Google Apps Script
+* Password reset
+* Remember login/session where appropriate
+* Profile management
+
+Accounts
+
+Users can create multiple accounts.
+
+Examples:
+
+* Maybank
+* CIMB
+* Cash
+* Touch ’n Go
+* GrabPay
+* Credit Card
+
+Each account has:
+
+* name
+* type
+* balance
+* icon
+* color
+* status
+* creation date
+
+Users can:
+
+* add account
+* edit account
+* archive account
+* delete account where safe
+
+The dashboard must be able to calculate total balance across active accounts.
+
+Transactions
+
+Users can:
+
+* add income
+* add expense
+* edit transaction
+* delete transaction
+* search transactions
+* filter transactions
+* sort transactions
+* view transaction details
+* attach receipt
+* add notes
+* select account
+* select category
+* select date and time
+
+Transaction types:
+
+* Income
+* Expense
+* Transfer
+
+Transfers must support moving money between the user’s own accounts.
+
+Example:
+
+Maybank → Touch ’n Go
+
+A transfer must not incorrectly count as income or expense.
+
+Categories
+
+Provide default categories.
+
+Expense categories:
+
+* Food & Drinks
+* Transport
+* Shopping
+* Bills
+* Education
+* Entertainment
+* Healthcare
+* Travel
+* Family
+* Other
+
+Income categories:
+
+* Salary
+* Allowance
+* Scholarship
+* Freelance
+* Investment
+* Gift
+* Other
+
+Users can create custom categories.
+
+Budgets
+
+Users can create monthly budgets.
+
+Examples:
+
+Food — RM500
+
+Transport — RM200
+
+Shopping — RM300
+
+Show:
+
+* budget amount
+* amount spent
+* amount remaining
+* percentage used
+* warning when approaching limit
+* warning when exceeded
+
+Savings Goals
+
+Users can create goals such as:
+
+* New Laptop
+* Camera
+* Emergency Fund
+* Holiday
+* New Phone
+
+Show:
+
+* target amount
+* current amount
+* remaining amount
+* percentage completed
+* target date
+* progress bar
+
+Dashboard
+
+The dashboard must show:
+
+* total balance
+* monthly income
+* monthly expenses
+* savings
+* budget status
+* spending chart
+* recent transactions
+* savings goal progress
+* useful financial insight
+
+The dashboard must not feel overcrowded.
+
+Reports
+
+Include:
+
+* income vs expenses
+* spending by category
+* monthly spending
+* spending trend
+* highest spending category
+* largest transaction
+* average daily spending
+* comparison with previous period
+
+Every chart must provide useful supporting information.
+
+Never show a chart with no explanation.
+
+Users should be able to interact with charts where practical.
+
+Calendar
+
+Provide a calendar view showing transactions by date.
+
+Clicking a date should show transactions from that date.
+
+Receipts
+
+Users can upload receipt images.
+
+Store receipt files in Google Drive.
+
+Store the Drive file ID and relevant metadata in Google Sheets.
+
+Receipts should be linked to their transaction.
+
+Notifications
+
+Provide useful notifications such as:
+
+* budget almost exceeded
+* budget exceeded
+* savings goal progress
+* reminder
+* monthly report available
+
+Settings
+
+Include:
+
+* profile
+* email
+* currency
+* theme
+* notification preferences
+* password
+* data export
+* privacy
+* logout
+
+Export
+
+Allow users to export their financial data where technically practical.
+
+At minimum support CSV.
+
+PDF export may be implemented if practical.
+
+⸻
+
+5. FUTURE FEATURES — DO NOT BUILD IN VERSION 1
+
+Design the architecture so these can be added later, but do not waste development time implementing them now.
+
+Version 2
+
+* recurring transactions
+* subscription tracking
+* bill reminders
+* net worth tracking
+* improved AI financial assistant
+
+Version 3
+
+Social Finance:
+
+* friend groups
+* shared expenses
+* bill splitting
+* shared trip budgets
+* trip planning
+* AI travel recommendations
+* money owed tracking
+* payment reminders
+* settlement tracking
+
+Potential future iOS application:
+
+* Apple Home Screen widgets
+* Lock Screen widgets
+* Live Activities
+
+Do not pretend native Apple widgets work inside the Google Apps Script web application.
+
+⸻
+
+6. DESIGN DIRECTION
+
+The design should be:
+
+* modern
+* sleek
+* mature
+* friendly
+* slightly colorful
+* practical
+* easy to read
+* polished
+
+The design should NOT be:
+
+* childish
+* cartoon-heavy
+* overly minimalist
+* dull
+* corporate-looking
+* old-fashioned
+* filled with unnecessary gradients
+* filled with excessive animations
+* obviously AI-generated
+
+The visual inspiration is closer to a modern banking application such as Maybank’s polished mobile experience, combined with the practicality of a modern expense-tracking application.
+
+Do not directly copy another company’s branding.
+
+Create an original SpendWise visual identity.
+
+⸻
+
+7. COLOR SYSTEM
+
+Use a neutral base with controlled accent colors.
+
+Suggested system:
+
+Primary:
+A refined purple/indigo tone.
+
+Success:
+A modern green.
+
+Danger:
+A clear but not overly bright red.
+
+Warning:
+A warm yellow/orange.
+
+Information:
+A calm blue.
+
+Background:
+Very light neutral.
+
+Cards:
+White or slightly tinted neutral.
+
+Text:
+Dark charcoal rather than pure black.
+
+Dark mode:
+Dark charcoal background with readable lighter cards and appropriately adjusted accent colors.
+
+Avoid using too many colors at once.
+
+Color should communicate meaning.
+
+⸻
+
+8. UI STYLE
+
+Use:
+
+* rounded cards
+* moderate corner radius
+* clean typography
+* generous but not excessive spacing
+* subtle shadows
+* clear hierarchy
+* modern icons
+* clear buttons
+* responsive layouts
+
+Do not make every element extremely rounded.
+
+Do not use excessive glassmorphism.
+
+Do not use excessive gradients.
+
+Do not use decorative elements that make financial information harder to read.
+
+⸻
+
+9. BUTTONS
+
+Primary action example:
+
+* Add Expense
+
+Buttons must:
+
+* clearly explain their purpose
+* have comfortable touch size
+* provide hover/pressed feedback
+* show loading state when necessary
+* prevent accidental duplicate submission
+
+Use icons where useful.
+
+⸻
+
+10. DASHBOARD DESIGN
+
+The dashboard should immediately answer:
+
+1. How much money do I have?
+2. How much did I spend?
+3. How much did I earn?
+4. Am I within budget?
+5. What am I spending the most on?
+6. How are my savings goals progressing?
+
+Suggested structure:
+
+Header
+
+↓
+
+Total Balance Card
+
+↓
+
+Income / Expense / Savings summary
+
+↓
+
+Spending overview
+
+↓
+
+Budget overview
+
+↓
+
+Savings goals
+
+↓
+
+Recent transactions
+
+↓
+
+Financial insight
+
+On smaller screens, stack these sections vertically.
+
+⸻
+
+11. CHART RULES
+
+Charts must be useful.
+
+Never show a chart without context.
+
+For example, instead of only:
+
+“Food — 35%”
+
+show:
+
+Food
+
+RM540
+
+35% of monthly expenses
+
+12% higher than last month
+
+Largest food expense:
+
+RM85 — Restaurant
+
+Where practical, clicking a chart category should filter the relevant transactions.
+
+Charts must have accessible text summaries as well.
+
+⸻
+
+12. DATABASE
+
+Create one Google Spreadsheet for the application.
+
+Use separate sheets:
+
+* Users
+* Accounts
+* Transactions
+* Categories
+* Budgets
+* SavingsGoals
+* Receipts
+* Notifications
+* Settings
+
+Create a database initialization function that can create the required sheets and headers automatically.
+
+Do not require the user to manually type column headers.
+
+⸻
+
+13. DATABASE SCHEMA
+
+Users
+
+Columns:
+
+userId
+name
+email
+passwordHash
+profilePicture
+createdAt
+lastLogin
+status
+
+Accounts
+
+Columns:
+
+accountId
+userId
+accountName
+accountType
+balance
+icon
+color
+status
+createdAt
+updatedAt
+
+Transactions
+
+Columns:
+
+transactionId
+userId
+accountId
+type
+amount
+categoryId
+description
+transactionDate
+transactionTime
+receiptId
+notes
+transferGroupId
+createdAt
+updatedAt
+
+Categories
+
+Columns:
+
+categoryId
+userId
+name
+type
+icon
+color
+isDefault
+status
+createdAt
+
+Budgets
+
+Columns:
+
+budgetId
+userId
+categoryId
+amount
+month
+year
+createdAt
+updatedAt
+
+SavingsGoals
+
+Columns:
+
+goalId
+userId
+name
+targetAmount
+currentAmount
+targetDate
+icon
+color
+status
+createdAt
+updatedAt
+
+Receipts
+
+Columns:
+
+receiptId
+userId
+transactionId
+fileId
+fileName
+fileUrl
+mimeType
+uploadedAt
+
+Notifications
+
+Columns:
+
+notificationId
+userId
+title
+message
+type
+isRead
+createdAt
+
+Settings
+
+Columns:
+
+settingId
+userId
+currency
+theme
+notificationsEnabled
+createdAt
+updatedAt
+
+⸻
+
+14. IDs
+
+Do not use row numbers as permanent IDs.
+
+Generate unique IDs for:
+
+* users
+* accounts
+* transactions
+* categories
+* budgets
+* savings goals
+* receipts
+* notifications
+
+IDs should remain stable even if rows are moved or deleted.
+
+⸻
+
+15. DATA VALIDATION
+
+Validate all user input.
+
+Examples:
+
+Amount:
+
+* must be numeric
+* must be greater than zero
+* must not contain invalid characters
+
+Email:
+
+* validate format
+
+Required fields:
+
+* cannot be empty
+
+Dates:
+
+* validate valid dates
+
+Do validation on both frontend and backend.
+
+Never trust frontend validation alone.
+
+⸻
+
+16. ACCOUNT BALANCES
+
+When adding an expense:
+
+Account balance decreases.
+
+When adding income:
+
+Account balance increases.
+
+When transferring:
+
+Source account decreases.
+
+Destination account increases.
+
+A transfer must not affect total net income/expense.
+
+Editing or deleting a transaction must correctly reverse the previous balance change before applying the new change.
+
+This is extremely important.
+
+⸻
+
+17. BACKEND STRUCTURE
+
+Organize Apps Script files logically.
+
+Suggested files:
+
+Code.gs
+Config.gs
+Auth.gs
+Database.gs
+Accounts.gs
+Transactions.gs
+Categories.gs
+Budgets.gs
+SavingsGoals.gs
+Reports.gs
+Receipts.gs
+Notifications.gs
+Utils.gs
+
+Frontend:
+
+index.html
+login.html
+dashboard.html
+transactions.html
+accounts.html
+reports.html
+profile.html
+settings.html
+
+Shared:
+
+CSS.html
+JavaScript.html
+
+The exact structure may be adjusted if Google Apps Script requires a different organization.
+
+⸻
+
+18. CODE QUALITY
+
+Write readable code.
+
+Use:
+
+* descriptive function names
+* comments for complicated logic
+* reusable functions
+* centralized configuration
+* error handling
+* validation
+* consistent naming
+
+Avoid:
+
+* duplicated code
+* unnecessary global variables
+* hardcoded spreadsheet IDs throughout the project
+* hardcoded user information
+* giant functions
+* fake API calls
+* fake database functions
+
+⸻
+
+19. CONFIGURATION
+
+Do not scatter configuration values throughout the code.
+
+Create a central configuration system.
+
+Important values may include:
+
+* spreadsheet ID
+* Drive folder ID
+* application name
+* timezone
+* default currency
+
+Use Script Properties for sensitive/configuration values where appropriate.
+
+Do not expose secrets in frontend HTML or JavaScript.
+
+⸻
+
+20. ERROR HANDLING
+
+Errors must be friendly to users.
+
+Do not display technical messages such as:
+
+“Exception: Cannot read property…”
+
+Instead:
+
+“Something went wrong while saving your expense. Please try again.”
+
+Log technical details on the backend for debugging.
+
+⸻
+
+21. LOADING STATES
+
+Whenever the application communicates with Apps Script:
+
+show an appropriate loading state.
+
+Examples:
+
+* button becomes disabled
+* loading spinner
+* skeleton card
+* “Saving…” text
+
+Prevent double submissions.
+
+⸻
+
+22. EMPTY STATES
+
+If the user has no transactions:
+
+Do not show a blank page.
+
+Show:
+
+“No transactions yet”
+
+and:
+
+“Add your first expense to start tracking your spending.”
+
+Similarly create useful empty states for:
+
+* accounts
+* budgets
+* savings goals
+* notifications
+
+⸻
+
+23. MOBILE DESIGN
+
+Mobile users must be able to:
+
+* add expenses easily
+* view balances
+* browse transactions
+* view budgets
+* check savings goals
+* access reports
+
+Use a mobile-friendly bottom navigation.
+
+Desktop can use a sidebar/navigation layout if appropriate.
+
+Do not simply stretch the mobile layout onto desktop.
+
+⸻
+
+24. ACCESSIBILITY
+
+Use:
+
+* readable text
+* sufficient contrast
+* meaningful button labels
+* keyboard navigation where possible
+* accessible form labels
+* alternative text for meaningful images
+* clear focus states
+
+Do not rely on color alone to communicate meaning.
+
+⸻
+
+25. SECURITY
+
+Implement reasonable security for a Google Apps Script portfolio project.
+
+Requirements:
+
+* validate all input
+* verify user identity on backend operations
+* never trust userId supplied by the frontend
+* prevent users from requesting another user’s records
+* protect configuration values
+* avoid exposing sensitive data
+* sanitize displayed user-generated content
+* handle sessions safely
+
+Do not claim the application is equivalent to a real banking application.
+
+⸻
+
+26. RECEIPT STORAGE
+
+When a user uploads a receipt:
+
+1. Validate file type.
+2. Validate reasonable file size.
+3. Upload to the configured Google Drive folder.
+4. Generate a receipt ID.
+5. Save metadata to the Receipts sheet.
+6. Link the receipt to the transaction.
+7. Allow the user to view the receipt later.
+
+If upload fails, do not create a broken receipt record.
+
+⸻
+
+27. REPORTING
+
+Create calculations for:
+
+* total balance
+* total income
+* total expenses
+* total savings
+* category spending
+* monthly spending
+* previous-month comparison
+* average daily spending
+* largest expense
+* budget usage
+
+Use real transaction data.
+
+Do not hardcode numbers.
+
+⸻
+
+28. SMART INSIGHTS
+
+Version 1 can use rule-based insights rather than requiring an expensive AI API.
+
+Examples:
+
+If food spending increased significantly:
+
+“Your food spending is higher than last month.”
+
+If a budget is almost full:
+
+“You have used most of your Food budget.”
+
+If spending decreases:
+
+“You spent less this month than last month.”
+
+If savings progress is good:
+
+“You’re making good progress toward your savings goal.”
+
+Make these messages useful, short and friendly.
+
+⸻
+
+29. CALENDAR
+
+Create a monthly calendar.
+
+Show days with transactions.
+
+When a user selects a date:
+
+Show:
+
+* transaction count
+* total income
+* total expenses
+* individual transactions
+
+Do not overcrowd calendar cells.
+
+⸻
+
+30. PROFILE AND SETTINGS
+
+Allow users to change:
+
+* name
+* profile picture if implemented
+* currency
+* theme
+* notification preferences
+* password
+
+Include:
+
+* logout
+* account deletion
+
+Account deletion should clearly warn the user before permanently removing data.
+
+⸻
+
+31. THEME
+
+Support:
+
+Light Mode
+
+Dark Mode
+
+Optional theme accent selection.
+
+Theme settings should persist.
+
+Do not use excessive animation when switching themes.
+
+⸻
+
+32. PERFORMANCE
+
+Avoid unnecessary calls to Google Apps Script.
+
+Where possible:
+
+* load dashboard data efficiently
+* combine related backend requests
+* avoid repeatedly reading the same spreadsheet
+* use caching where appropriate
+* avoid reading entire spreadsheets when only a few rows are required
+
+However, prioritize correctness over premature optimization.
+
+⸻
+
+33. GOOGLE APPS SCRIPT LIMITATIONS
+
+Design the application realistically around Google Apps Script.
+
+Do not assume:
+
+* permanent server processes
+* unrestricted execution time
+* native iOS functionality
+* unlimited database performance
+* unlimited file storage
+* real-time database behavior
+
+If a requested feature is unsuitable for Apps Script, explain the limitation and provide the closest practical implementation.
+
+⸻
+
+34. SETUP SYSTEM
+
+Create a setup function such as:
+
+setupApplication()
+
+It should help initialize:
+
+* spreadsheet sheets
+* headers
+* default categories
+* required configuration
+
+Clearly explain how to run the setup function once.
+
+⸻
+
+35. TESTING
+
+Before declaring the application complete, test:
+
+Authentication
+
+* registration
+* login
+* logout
+* invalid login
+* password reset
+
+Accounts
+
+* add
+* edit
+* archive
+* delete
+* balance calculation
+
+Transactions
+
+* add expense
+* add income
+* transfer
+* edit
+* delete
+* filtering
+* searching
+
+Budgets
+
+* create
+* update
+* exceeded budget
+
+Savings
+
+* create goal
+* update progress
+
+Receipts
+
+* upload
+* view
+* failed upload
+
+Reports
+
+* correct calculations
+* correct charts
+
+Security
+
+* User A cannot access User B’s data.
+
+Responsive design
+
+* mobile
+* tablet
+* desktop
+
+⸻
+
+36. DEVELOPMENT ORDER
+
+Build the project in this order:
+
+Phase 1
+
+Project setup
+
+Phase 2
+
+Database initialization
+
+Phase 3
+
+Authentication
+
+Phase 4
+
+Accounts
+
+Phase 5
+
+Transactions
+
+Phase 6
+
+Dashboard
+
+Phase 7
+
+Budgets
+
+Phase 8
+
+Savings goals
+
+Phase 9
+
+Reports
+
+Phase 10
+
+Calendar
+
+Phase 11
+
+Receipts
+
+Phase 12
+
+Notifications
+
+Phase 13
+
+Settings
+
+Phase 14
+
+Responsive design refinement
+
+Phase 15
+
+Testing and bug fixing
+
+Phase 16
+
+Final UI polish
+
+⸻
+
+37. IMPORTANT OUTPUT RULE
+
+Do not try to output the entire project blindly if the response becomes too long.
+
+Work through the development order above.
+
+When you reach the response limit:
+
+* stop at a logical point
+* clearly state which files are complete
+* clearly state which file should be continued next
+* do not repeat completed code
+
+When I say “Continue”, continue from exactly where you stopped.
+
+Do not restart the project.
+
+Do not redesign completed sections.
+
+⸻
+
+38. FILE OUTPUT FORMAT
+
+Whenever generating code, clearly label the file.
+
+Example:
+
+FILE: Code.gs
+
+code here
+
+Then:
+
+FILE: Database.gs
+
+code here
+
+Do not mix multiple files inside one code block.
+
+⸻
+
+39. IMPORTANT GOOGLE APPS SCRIPT RULE
+
+The final project must be compatible with Google Apps Script.
+
+Do not provide a Node.js-only backend.
+
+Do not require npm unless you clearly explain that it cannot be used directly in Apps Script and provide an alternative.
+
+Prefer technologies that can work inside Apps Script HTML Service.
+
+⸻
+
+40. FINAL USER EXPERIENCE
+
+The finished application should feel:
+
+* trustworthy
+* modern
+* friendly
+* polished
+* easy to understand
+* practical
+* responsive
+
+The user should be able to open the application and understand what to do without reading a manual.
+
+The main action should always be obvious.
+
+⸻
+
+41. FINAL REQUIREMENT
+
+Do not remove features simply because they are complicated.
+
+First determine whether they can reasonably be implemented in Google Apps Script.
+
+If something cannot realistically be implemented in Version 1, explain the limitation and provide a sensible alternative.
+
+Do not silently remove requirements.
+
+⸻
+
+42. START
+
+Begin by creating the project foundation.
+
+First provide:
+
+1. Final project architecture.
+2. Complete file list.
+3. Google Sheets database structure.
+4. Setup instructions.
+5. Then begin generating the actual code in the development order above.
+
+Remember:
+
+This is intended to become a real portfolio project.
+
+Prioritize correctness, maintainability, usability and visual quality over simply producing a large amount of code.
