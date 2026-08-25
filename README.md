@@ -4,6 +4,8 @@
 
 **SpendWise is currently a work in progress.** The current version contains the initial application design and core features, with further improvements and functional updates planned.
 
+***Notes:*** This is a free time mobile application that i made using **Replit** and are still under development which are yet to be published. The mobile application can be tried by scanning the barcode from **Build Screenshots** using **Expo Go**
+
 ---
 
 ## ✨ About
@@ -44,15 +46,25 @@ The visual design is still being refined and may change during development.
 ---
 
 ## 📸 Screenshots
+### Build
 ![Build](Screenshots/Build.jpg)
+### Icon
 ![Icon](Screenshots/Icon.jpg)
+### Home Page
 ![Home Page](Screenshots/Home_page.jpg)
+### Home Page Part2
 ![Home Page Part2](Screenshots/Home_page_2.jpg)
+### Activity Page
 ![Activity Page](Screenshots/Activity_page.jpg)
-![Budget Page](Screenshots/Budget_page.jpg)
+### Budget Page
+![Budget Page](Screenshots/Budgets_page.jpg)
+### Goals Page
 ![Goals Page](Screenshots/Goals_page.jpg)
+### More Page
 ![More Page](Screenshots/More_page.jpg)
+### New Expenses Transaction
 ![New Expenses Transaction](Screenshots/New_expenses_transaction.jpg)
+### New Income Transaction
 ![New Income Transaction](Screenshots/New_income_transaction.jpg)
 
 ---
