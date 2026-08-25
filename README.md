@@ -4,12 +4,12 @@
 
 **SpendWise is currently a work in progress.** The current version contains the initial application design and core features, with further improvements and functional updates planned.
 
-***Notes:*** This is a free time mobile application that i made using **Replit** and are still under development which are yet to be published. The mobile application can be tried by scanning the barcode from **Build Screenshots** using **Expo Go**
+***Notes:*** This is my first mobile application that i made using **Replit** a cloud-based software development platform that lets you write, run, and build applications directly in your web browser. This project is made during my free-time to try learning web development with the help of Artificial Intelligence which are still under development and are yet to be published. The mobile application can be tried by scanning the barcode from **Build Screenshots** using **Expo Go**
 
 ---
 
 ## Errors
-The mobile app is not a fully function app yet and is made using fake data which cannot be changed by users and most of the buttton is a dummy button which is an coding errors.
+The mobile app is not a fully function app yet and is made using fake data which cannot be changed by users and most of the buttton is a dummy button which is a coding errors.
 
 ___
 
