@@ -43,6 +43,20 @@ The visual design is still being refined and may change during development.
 
 ---
 
+## 📸 Screenshots
+![Build](Screenshots/Build.jpg)
+![Icon](Screenshots/Icon.jpg)
+![Home Page](Screenshots/Home_page.jpg)
+![Home Page Part2](Screenshots/Home_page_2.jpg)
+![Activity Page](Screenshots/Activity_page.jpg)
+![Budget Page](Screenshots/Budget_page.jpg)
+![Goals Page](Screenshots/Goals_page.jpg)
+![More Page](Screenshots/More_page.jpg)
+![New Expenses Transaction](Screenshots/New_expenses_transaction.jpg)
+![New Income Transaction](Screenshots/New_income_transaction.jpg)
+
+---
+
 ## 🚧 Current Status
 
 **Work in Progress — 🚧 Active Development**
