@@ -8,6 +8,11 @@
 
 ---
 
+## Errors
+The mobile app is not a fully function app yet and is made using fake data which cannot be changed by users and most of the buttton is a dummy button which is an coding errors.
+
+___
+
 ## ✨ About
 
 SpendWise is designed as a simple and modern personal finance tracker where users can manage their everyday finances without relying on multiple separate tools.
